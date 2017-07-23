@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: serverRegistryApp
+server:
+  port: 4001
+  
+eureka:   
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${random.value} 
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 3
+    contextPath: /serverRegistryApp
+   
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    
